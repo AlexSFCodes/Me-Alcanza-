@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>me-alcanza-budget-simulator</title>
+  </head>
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <header class="bg-primary text-white py-4 mb-4">
+    <div class="container text-center">
+      <h1 class="fw-bold">¿Me alcanza?</h1>
+      <p class="mb-0">Simulador sencillo de gastos mensuales</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- FORMULARIO -->
+    <section class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Ingresa tus datos</h5>
+
+        <form>
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <label class="form-label">Sueldo mensual ($)</label>
+              <input type="number" class="form-control" placeholder="Ej: 460" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Arriendo ($)</label>
+              <input type="number" class="form-control" placeholder="Ej: 180" />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Alimentación ($)</label>
+              <input type="number" class="form-control" placeholder="Ej: 150" />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Transporte ($)</label>
+              <input type="number" class="form-control" placeholder="Ej: 50" />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Servicios básicos ($)</label>
+              <input type="number" class="form-control" placeholder="Ej: 40" />
+            </div>
+
+          </div>
+
+          <div class="d-grid mt-4">
+            <button type="button" class="btn btn-primary btn-lg">
+              Calcular
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTADO -->
+    <section class="card shadow-sm">
+      <div class="card-body text-center">
+        <h5 class="card-title">Resultado</h5>
+
+        <p class="fs-5 mb-1">
+          Total de gastos: <strong>$0.00</strong>
+        </p>
+
+        <p class="fs-4 fw-bold text-success">
+          Te alcanza
+        </p>
+
+        <!-- version alternativa (cuando no alcanza) -->
+        <!--
+        <p class="fs-4 fw-bold text-danger">
+          No te alcanza 
+        </p>
+        -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-muted py-4 mt-5">
+    <small>
+      Proyecto educativo · Ecuador 🇪🇨 · JS + Vite
+    </small>
+  </footer>
+
+</body>
+</html>
