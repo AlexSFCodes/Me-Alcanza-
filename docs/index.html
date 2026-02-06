@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Me alcanza? - Simulador de gastos</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <script type="module" crossorigin src="/assets/index-D5dIFmOb.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-2DYGx4PL.css">
+</head>
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <header class="bg-primary text-white py-5 mb-5 shadow">
+    <div class="container text-center">
+      <div class="mb-3">
+        <i class="bi bi-calculator-fill display-4"></i>
+      </div>
+      <h1 class="fw-bold display-5">¿Me alcanza?</h1>
+      <p class="lead mb-0">Simulador de presupuesto mensual personal</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container mb-5">
+
+    <!-- FORMULARIO -->
+    <section class="card shadow-lg border-0 mb-5">
+      <div class="card-header bg-white border-0 pt-4">
+        <div class="d-flex align-items-center">
+          <div class="bg-primary text-white rounded-circle p-3 me-3">
+            <i class="bi bi-pencil-square fs-4"></i>
+          </div>
+          <div>
+            <h3 class="card-title mb-1 fw-bold">Ingresa tus datos</h3>
+            <p class="text-muted mb-0">Todos los valores en dólares ($)</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body p-4">
+        <form id="gastosForm">
+          <div class="row g-3">
+            
+            <!-- INGRESOS -->
+            <div class="col-12 mb-2">
+              <h5 class="text-primary mb-3">
+                <i class="bi bi-cash-stack me-2"></i>Ingresos
+              </h5>
+            </div>
+            
+            <div class="col-md-6">
+              <label for="sueldo" class="form-label fw-semibold">
+                <i class="bi bi-briefcase me-1 text-primary"></i>Sueldo mensual
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="sueldo" placeholder="460.00" min="0" step="0.01" 
+                       required autofocus>
+              </div>
+              <small class="form-text text-muted">Tu ingreso principal del mes</small>
+            </div>
+
+            <div class="col-md-6">
+              <label for="otrosIngresos" class="form-label fw-semibold">
+                <i class="bi bi-plus-circle me-1 text-primary"></i>Otros ingresos
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="otrosIngresos" placeholder="50.00" min="0" step="0.01" >
+              </div>
+              <small class="form-text text-muted">Freelance, bonos, etc.</small>
+            </div>
+
+            <!-- GASTOS -->
+            <div class="col-12 mt-4 mb-2">
+              <h5 class="text-primary mb-3 text-danger">
+                <i class="bi bi-arrow-down-circle me-2 text-danger"></i>Gastos mensuales
+              </h5>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3">
+              <label for="arriendo" class="form-label fw-semibold">
+                <i class="bi bi-house-door me-1 text-danger"></i>Vivienda
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="arriendo" placeholder="180.00" min="0" step="0.01" 
+                       required>
+              </div>
+              <small class="form-text text-muted">Arriendo o hipoteca</small>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3">
+              <label for="alimentacion" class="form-label fw-semibold">
+                <i class="bi bi-cart me-1 text-danger"></i>Alimentación
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="alimentacion" placeholder="150.00" min="0" step="0.01" 
+                       required>
+              </div>
+              <small class="form-text text-muted">Supermercado, restaurantes</small>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3">
+              <label for="transporte" class="form-label fw-semibold">
+                <i class="bi bi-bus-front me-1 text-danger"></i>Transporte
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="transporte" placeholder="50.00" min="0" step="0.01" 
+                       required>
+              </div>
+              <small class="form-text text-muted">Gasolina, pasajes, taxi</small>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3">
+              <label for="servicios" class="form-label fw-semibold">
+                <i class="bi bi-lightning-charge me-1 text-danger"></i>Servicios
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="servicios" placeholder="40.00" min="0" step="0.01" 
+                       required>
+              </div>
+              <small class="form-text text-muted">Luz, agua, internet</small>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3">
+              <label for="entretenimiento" class="form-label fw-semibold">
+                <i class="bi bi-controller me-1 text-danger"></i>Entretenimiento
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="entretenimiento" placeholder="00.00" min="0" step="0.01" 
+                       >
+              </div>
+              <small class="form-text text-muted">Cine, suscripciones, salidas</small>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3">
+              <label for="otrosGastos" class="form-label fw-semibold">
+                <i class="bi bi-three-dots me-1 text-danger"></i>Otros gastos
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0">
+                  <strong>$</strong>
+                </span>
+                <input type="number" class="form-control border-start-0 ps-0" 
+                       id="otrosGastos" placeholder="00.00" min="0" step="0.01" 
+                       >
+              </div>
+              <small class="form-text text-muted">Gastos varios</small>
+            </div>
+
+          </div>
+
+          <!-- BOTONES -->
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-md-end mt-5 pt-3 border-top">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 order-2 order-md-1" id="limpiarBtn">
+              <i class="bi bi-eraser me-2"></i>Limpiar
+            </button>
+            <button type="submit" class="btn btn-primary btn-lg px-5 order-1 order-md-2" id="calcularBtn">
+              <i class="bi bi-calculator me-2"></i>Calcular presupuesto
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="card shadow-lg border-0" id="resultadoCard">
+      <div class="card-header bg-white border-0 pt-4">
+        <div class="d-flex align-items-center">
+          <div class="bg-success text-white rounded-circle p-3 me-3">
+            <i class="bi bi-graph-up-arrow fs-4"></i>
+          </div>
+          <div>
+            <h3 class="card-title mb-1 fw-bold">Resultado del análisis</h3>
+            <p class="text-muted mb-0">Resumen de tu situación financiera</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-body p-0">
+        <!-- ESTADO GENERAL -->
+        <div class="p-4 border-bottom">
+          <div class="alert alert-info text-center py-4 mb-0" id="alertResultado">
+            <i class="bi bi-info-circle display-1 mb-3"></i>
+            <h4 class="fw-bold mb-2">Completa el formulario</h4>
+            <p class="mb-0">Ingresa tus datos para ver el análisis</p>
+          </div>
+        </div>
+
+        <!-- RESUMEN NUMÉRICO -->
+        <div class="row g-0">
+          <div class="col-md-4 border-end">
+            <div class="p-4 text-center">
+              <i class="bi bi-arrow-up-circle text-primary display-6 mb-3"></i>
+              <h5 class="fw-semibold">Total Ingresos</h5>
+              <h2 class="fw-bold text-primary" id="totalIngresos">$0.00</h2>
+            </div>
+          </div>
+          
+          <div class="col-md-4 border-end">
+            <div class="p-4 text-center">
+              <i class="bi bi-arrow-down-circle text-danger display-6 mb-3"></i>
+              <h5 class="fw-semibold">Total Gastos</h5>
+              <h2 class="fw-bold text-danger" id="totalGastos">$0.00</h2>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="p-4 text-center">
+              <i class="bi bi-cash-coin text-success display-6 mb-3"></i>
+              <h5 class="fw-semibold">Saldo Final</h5>
+              <h2 class="fw-bold" id="saldoFinal">$0.00</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETALLE DE GASTOS -->
+        <div class="p-4 border-top">
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-pie-chart me-2"></i>Distribución de gastos
+          </h5>
+          <div id="detalleGastos">
+            <!-- Aquí irán las barras de progreso dinámicas -->
+            <div class="col-12 text-center text-muted py-3">
+              <i class="bi bi-bar-chart display-4 opacity-25"></i>
+              <p class="mt-2">Los gráficos aparecerán después del cálculo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-footer bg-white border-0 text-center py-4">
+        <button class="btn btn-outline-primary" id="ocultarResultadoBtn">
+          <i class="bi bi-eye-slash me-2"></i>Ocultar resultados
+        </button>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <h5 class="fw-bold">¿Me alcanza?</h5>
+          <p class="text-light mb-0 opacity-75">Herramienta educativa para gestión financiera personal</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <small class="text-light opacity-75">
+            <i class="bi bi-code-slash me-1"></i>Desarrollado con Bootstrap & JavaScript<br>
+            <i class="bi bi-geo-alt me-1"></i>AlexCodes · Proyecto educativo
+          </small>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
